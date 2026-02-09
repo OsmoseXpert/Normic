@@ -430,6 +430,26 @@
         }
 
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NORMIC Studio",
+      "url": "https://normic.be/",
+      "logo": "https://normic.be/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dammekensstraat 150",
+        "addressLocality": "Ronse",
+        "postalCode": "9600",
+        "addressCountry": "BE"
+      },
+      "telephone": "+32493673484",
+      "areaServed": "Oost-Vlaanderen",
+      "description": "Ontwerpstudio voor custom sportswear, teamwear en sportlogo design voor sportclubs in België.",
+      "sameAs": []
+    }
+    </script>
 </head>
 <body>
 
@@ -471,9 +491,9 @@
                 <img src="assets/images/branding/normicweblogo.svg" alt="NORMIC Sportswear Logo" class="hero-logo" loading="eager">
             </div>
 
-            <p class="text-lg md:text-xl text-zinc-400 mb-3 max-w-2xl mx-auto font-light leading-relaxed">
-                High-end sportidentiteiten en teamwear, van ontwerp tot levering.
-            </p>
+            <h1 class="text-lg md:text-xl text-zinc-400 mb-3 max-w-2xl mx-auto font-light leading-relaxed">
+                High-end sportidentiteiten en teamwear, van ontwerp tot levering in Oost-Vlaanderen.
+            </h1>
 
             <!-- ✅ 1 extra verduidelijkende zin, max 1 regel, functioneel -->
             <p class="text-sm md:text-base text-zinc-500 mb-8 max-w-2xl mx-auto">
@@ -622,9 +642,46 @@
                 Elk project start zonder vast shirtmodel. Sport, intensiteit en gebruik bepalen pas daarna de technische keuzes.
             </div>
 
+            <div class="mt-6 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+                NORMIC combineert ontwerpkennis met inzicht in textiel, druktechnieken en productiebeperkingen. Daardoor vermijden we fouten die pas zichtbaar worden na levering.
+            </div>
+
+            <div class="mt-4 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+                Als lokale ontwerpstudio in België werken we rechtstreeks met sportclubs, zonder tussenlagen of verkoopstructuren.
+            </div>
+
             <div class="mt-4 max-w-3xl text-sm text-zinc-600 leading-relaxed">
                 <strong class="text-zinc-400">NORMIC ontwerpt sportidentiteiten en begeleidt clubs tot het eindresultaat.</strong><br>
                 Van creatie en technische uitwerking tot gecontroleerde productie en levering.
+            </div>
+        </div>
+        </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-28 bg-black border-t border-zinc-900">
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-4xl font-black italic uppercase mb-12 text-center">Veelgestelde vragen</h2>
+            <div class="space-y-8 text-zinc-400">
+                <div>
+                    <h3 class="font-bold text-white mb-2">Werkt NORMIC met vaste shirtmodellen?</h3>
+                    <p class="text-sm">Nee. Elk project start zonder vast model. Sport, intensiteit en gebruik bepalen pas later de technische keuzes.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-2">Ontwerpen jullie ook zonder productie?</h3>
+                    <p class="text-sm">Ja. Logo design en sportidentiteit kunnen los worden uitgewerkt, volledig productieklaar voor textiel.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-2">Voor welke regio’s werkt NORMIC?</h3>
+                    <p class="text-sm">Wij werken voornamelijk voor sportclubs in Oost-Vlaanderen en breder in België.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-2">Hoe lang duurt een ontwerptraject?</h3>
+                    <p class="text-sm">Een ontwerpfase duurt gemiddeld één tot twee weken, afhankelijk van feedbackrondes en complexiteit.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-2">Begeleidt NORMIC ook de productie?</h3>
+                    <p class="text-sm">Ja. Wij blijven het vaste aanspreekpunt tot en met gecontroleerde levering via Europese partners.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -850,69 +907,4 @@
           designImgs.forEach((img) => {
             img.setAttribute('tabindex', '0');
             img.setAttribute('role', 'button');
-            img.setAttribute('aria-label', 'Open ontwerp');
-
-            const handler = () => open(img.currentSrc || img.src, img.alt);
-            img.addEventListener('click', handler);
-            img.addEventListener('keydown', (e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handler();
-              }
-            });
-          });
-
-          // close actions
-          lb.querySelectorAll('[data-lightbox-close]').forEach((el) => el.addEventListener('click', close));
-          window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
-          });
-        })();
-    </script>
-
-    <script>
-    /* HERO parallax */
-    (() => {
-      const hero = document.querySelector('.hero-parallax');
-      if (!hero) return;
-
-      const bg = hero.querySelector('.hero-parallax__bg');
-      if (!bg) return;
-
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) return;
-
-      let ticking = false;
-      const MAX_SHIFT = 45;
-
-      const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-
-      const update = () => {
-        ticking = false;
-
-        const rect = hero.getBoundingClientRect();
-        const vh = window.innerHeight || document.documentElement.clientHeight;
-
-        const total = rect.height + vh;
-        const progress = clamp((vh - rect.top) / total, 0, 1);
-
-        const eased = progress * progress * (3 - 2 * progress);
-        const shift = eased * MAX_SHIFT;
-
-        bg.style.transform = `translate3d(0, -${shift}%, 0)`;
-      };
-
-      const requestTick = () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-      };
-
-      window.addEventListener('scroll', requestTick, { passive: true });
-      window.addEventListener('resize', requestTick);
-      update();
-    })();
-    </script>
-
-</body>
-</html>
+            img.setAttr
