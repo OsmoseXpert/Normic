@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metadata -->
+    <title>NORMIC | Custom Sportswear Design & Branding voor Sportclubs</title>
+    <meta name="description" content="NORMIC herdefinieert de identiteit van je sportclub met custom sportswear, logo design en teamwear. Ontwerp je voetbaltruitjes en sportkleding in Oost-Vlaanderen.">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <meta name="keywords" content="sportkleding bedrukken, voetbaltruitjes ontwerpen, sportshirts bedrukken, teamwear Oost-Vlaanderen, logo design sportclub, custom sportkleding design, sportkledij ontwerpen, Normic">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://normic.be/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://normic.be/">
+    <meta property="og:title" content="NORMIC – Custom Sportswear Design & Branding voor Sportclubs">
+    <meta property="og:description" content="NORMIC herdefinieert de identiteit van je sportclub met professioneel logo design en hoogwaardige teamwear.">
+    <meta property="og:image" content="https://normic.be/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Jouw eigen CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --clr-primary: #000;
+            --clr-accent: #fb923c;
+            --bg-matte: #1a1a1a; 
+        }
+
+        body {
+            font-family: var(--ff-body, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+            scroll-behavior: smooth;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .hero-bg { background-color: var(--bg-matte); }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-logo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+        }
+
+        @media (max-width: 768px) {
+            .primary-navigation {
+                position: fixed;
+                inset: 0 0 0 0;
+                background: white;
+                padding: 6rem 2rem;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .primary-navigation[data-visible="true"] {
+                transform: translateX(0%);
+            }
+
+            /* bigger tap targets on mobile */
+            .primary-navigation a{
+                font-size: 14px;
+                padding: 0.9rem 1rem;
+                border-radius: 999px;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 420px){
+            .hero-logo{ max-width: 420px; }
+            .slogan-pill{ padding: 0.55rem 1rem; }
+            .slogan-pill{ letter-spacing: 0.25em; }
+            .design-track{ gap: 1rem; padding: 1rem; }
+            .design-slide{ width: 220px; }
+            .lightbox__dialog{ margin: 2vh auto; width: min(94vw, 1100px); }
+            .lightbox__content{ padding: 0.85rem; }
+            .lightbox__img{ height: min(74vh, 820px); }
+        }
+
+        .contact-input {
+            border-bottom: 1px solid #333;
+            background: transparent;
+            padding: 1rem 0;
+            transition: border-color 0.3s;
+        }
+
+        /* Mobile readability for form fields */
+        @media (max-width: 640px){
+            .contact-input{
+                font-size: 14px;
+                letter-spacing: 0.18em;
+            }
+        }
+
+        .contact-input:focus {
+            outline: none;
+            border-color: var(--clr-accent);
+        }
+
+        /* CTA button states */
+        .btn-cta-outline {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-cta-outline:hover {
+            background-color: var(--clr-accent);
+            border-color: var(--clr-accent);
+            color: white;
+        }
+
+        .btn-cta-fill {
+            background: white;
+            color: black;
+            border: 1px solid white;
+            transition: all 0.3s ease;
+        }
+        .btn-cta-fill:hover {
+            background-color: var(--clr-accent);
+            border-color: var(--clr-accent);
+            color: white;
+        }
+        
+        .slogan-pill {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+    
+        /* Mockup cards */
+        .mockup-card {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        .mockup-card--dark {
+            background: rgb(24 24 27);
+            border: 1px solid rgb(39 39 42);
+        }
+        .mockup-card--light {
+            background: rgb(24 24 27);
+            border: 1px solid rgb(39 39 42);
+        }
+        .mockup-inner {
+            position: absolute;
+            inset: 0;
+            padding: 6%;
+            display: grid;
+            place-items: center;
+        }
+        .mockup-card--light .mockup-inner { padding: 6%; }
+        .mockup-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* Crossfade slideshow */
+        .mockup-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .mockup-slideshow .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 700ms ease;
+        }
+        .mockup-slideshow .slide.is-active { opacity: 1; }
+
+        /* HERO parallax */
+        .hero-parallax{
+          position: relative;
+          overflow: hidden;
+        }
+        .hero-parallax__bg{
+          position: absolute;
+          inset: 0;
+          height: 160%;
+          background-image: url("assets/images/page style images/banner-sport.png");
+          background-size: cover;
+          background-position: center 30%;
+          transform: translate3d(0, 0, 0);
+          will-change: transform;
+          opacity: 0.75;
+        }
+        .hero-parallax__overlay{
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(80% 80% at 50% 20%, rgba(0,0,0,.25), rgba(0,0,0,.78));
+          pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce){
+          .hero-parallax__bg{ transform: none !important; }
+          .design-track{ animation: none !important; }
+        }
+
+        /* DESIGN BLITZ SLIDER */
+        .design-blitz{
+          position: relative;
+          overflow: hidden;
+          border-radius: 1.5rem;
+          border: 1px solid rgb(39 39 42);
+        }
+
+        .design-track{
+          display: flex;
+          gap: 1.5rem;
+          padding: 1.5rem;
+          width: max-content;
+          animation: blitz 22s linear infinite;
+        }
+
+        .design-blitz:hover .design-track{
+          animation-play-state: paused;
+        }
+
+        .design-slide{
+          width: 280px;
+          aspect-ratio: 1 / 1;
+          background: rgb(24 24 27);
+          border-radius: 1.25rem;
+          display: grid;
+          place-items: center;
+        }
+
+        .design-slide img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          filter: grayscale(100%) contrast(0.9) brightness(0.95);
+          transition: filter 0.35s ease, transform 0.35s ease;
+        }
+
+        .design-slide:hover img{
+          filter: grayscale(0%) contrast(1) brightness(1);
+          transform: scale(1.03);
+        }
+
+        /* FIX: correcte keyframes (zonder dubbele 'to' en extra braces) */
+        @keyframes blitz{
+          from{ transform: translateX(0); }
+          to{ transform: translateX(-50%); }
+        }
+
+        /* CLICK-TO-ZOOM (lightbox) */
+        .lightbox{
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: none;
+        }
+        .lightbox.is-open{ display: block; }
+        .lightbox__backdrop{
+          position: absolute;
+          inset: 0;
+          background: rgba(0,0,0,.78);
+          backdrop-filter: blur(6px);
+        }
+        .lightbox__dialog{
+          position: relative;
+          width: min(92vw, 1100px);
+          margin: 6vh auto;
+          border-radius: 1.25rem;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,.12);
+          background: rgb(10 10 10);
+          box-shadow: 0 30px 90px rgba(0,0,0,.7);
+        }
+        .lightbox__topbar{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          padding: 0.9rem 1.1rem;
+          border-bottom: 1px solid rgba(255,255,255,.08);
+          background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+        }
+        .lightbox__title{
+          font-size: 11px;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,.72);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .lightbox__close{
+          width: 42px;
+          height: 42px;
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,.14);
+          background: rgba(255,255,255,.06);
+          color: white;
+          transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+          cursor: pointer;
+        }
+        .lightbox__close:hover{
+          background: rgba(251,146,60,.18);
+          border-color: rgba(251,146,60,.35);
+          transform: scale(1.03);
+        }
+        .lightbox__content{
+          padding: 1.1rem;
+        }
+        .lightbox__img{
+          width: 100%;
+          height: min(72vh, 820px);
+          object-fit: contain;
+          display: block;
+          user-select: none;
+          -webkit-user-drag: none;
+        }
+
+        /* make slides feel clickable */
+        .design-slide{ cursor: zoom-in; }
+
+    
+        /* COOKIE BANNER (light variant) */
+        .cookie-banner{
+          position: fixed;
+          inset: auto 0 0 0;
+          z-index: 9998;
+          background: rgba(255,255,255,0.98);
+          backdrop-filter: blur(6px);
+          border-top: 1px solid rgba(0,0,0,.12);
+          box-shadow: 0 -12px 40px rgba(0,0,0,.25);
+          display: none;
+        }
+        .cookie-banner.is-visible{ display:block; }
+        .cookie-inner{
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 1.1rem 1.5rem;
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 1.25rem;
+          align-items: center;
+        }
+        .cookie-text{
+          font-size: 13px;
+          line-height: 1.6;
+          color: rgba(0,0,0,.75);
+        }
+        .cookie-text a{
+          color: #000;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+        .cookie-actions{
+          display: flex;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+        .cookie-btn{
+          padding: 0.6rem 1.1rem;
+          font-size: 11px;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          border-radius: 999px;
+          border: 1px solid rgba(0,0,0,.25);
+          background: transparent;
+          color: #000;
+          transition: all .25s ease;
+          cursor: pointer;
+        }
+        .cookie-btn:hover{
+          border-color: var(--clr-accent);
+          background: rgba(251,146,60,.12);
+        }
+        .cookie-btn--accept{
+          background: #000;
+          color: #fff;
+          border-color: #000;
+        }
+        .cookie-btn--accept:hover{
+          background: var(--clr-accent);
+          border-color: var(--clr-accent);
+          color: #fff;
+        }
+        @media (max-width: 768px){
+          .cookie-inner{
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .cookie-actions{
+            justify-content: flex-start;
+          }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigatie -->
+    <nav class="fixed w-full z-50 glass-nav" aria-label="Hoofdnavigatie">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tighter italic text-black hover:opacity-80 transition-opacity">
+                NORMIC<span class="text-zinc-400 text-sm">.be</span>
+            </a>
+            
+            <button class="nav-toggle md:hidden relative z-[100]" aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars text-black text-2xl"></i>
+            </button>
+
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation md:flex md:items-center space-x-0 md:space-x-8 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+                <li><a href="#branding" class="hover:text-black transition block py-2">Logo Design</a></li>
+                <li><a href="#service" class="hover:text-black transition block py-2">De Service</a></li>
+                <li><a href="#faq" class="hover:text-black transition block py-2">FAQ</a></li>
+                <li class="mt-4 md:mt-0">
+                    <a href="#project-aanvraag" class="bg-black text-white px-6 py-3 rounded-full hover:bg-orange-500 transition-colors text-[10px]">Start Project</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-parallax flex flex-col items-center justify-start pt-28 pb-14 hero-bg relative overflow-hidden">
+        <div class="hero-parallax__bg" aria-hidden="true"></div>
+        <div class="hero-parallax__overlay" aria-hidden="true"></div>
+
+        <div class="max-w-[1400px] mx-auto px-8 text-center relative z-10 w-full flex flex-col items-center">
+            <div class="inline-block slogan-pill px-8 py-2 rounded-full text-[11px] uppercase tracking-[0.4em] mb-6">
+                <span class="text-green-500">One Vision.</span> 
+                <span class="text-orange-500 mx-2">One Identity.</span> 
+                <span class="text-blue-500">One Standard.</span>
+            </div>
+            
+            <div class="mb-6 w-full flex justify-center px-4">
+                <img src="assets/images/branding/normicweblogo.svg" alt="NORMIC Sportswear Logo" class="hero-logo" loading="eager">
+            </div>
+
+            <p class="text-lg md:text-xl text-zinc-400 mb-3 max-w-2xl mx-auto font-light leading-relaxed">
+                High-end sportidentiteiten en teamwear, van ontwerp tot levering.
+            </p>
+
+            <!-- ✅ 1 extra verduidelijkende zin, max 1 regel, functioneel -->
+            <p class="text-sm md:text-base text-zinc-500 mb-8 max-w-2xl mx-auto">
+                Voor sportclubs, zonder dat je zelf tools, bestanden of productie moet beheren.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#service" class="btn-cta-fill px-12 py-5 font-bold text-sm uppercase tracking-widest rounded-sm shadow-xl">Hoe we werken</a>
+                <a href="#project-aanvraag" class="btn-cta-outline px-12 py-5 font-bold text-sm uppercase tracking-widest rounded-sm">Vrijblijvend kennismaken</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Branding Sectie -->
+    <section id="branding" class="py-28 bg-zinc-950 border-y border-zinc-900">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="flex-1">
+                    <h2 class="text-4xl md:text-5xl font-black italic uppercase mb-8 leading-tight">
+                        Logo Design & <br><span class="text-zinc-600">Redesign</span>
+                    </h2>
+
+                    <p class="text-zinc-400 text-lg font-light mb-6 max-w-xl">
+                        Een sterk shirt begint bij een scherp logo. NORMIC optimaliseert uw clubidentiteit voor maximaal resultaat op textiel. Wij hertekenen verouderde logo's naar haarscherpe vectoren.
+                    </p>
+
+                    <!-- ✅ 1 onderscheidende zin (textiel > decoratie) -->
+                    <p class="text-zinc-500 text-sm mb-8 max-w-xl">
+                        Wij tekenen voor textiel, niet voor decoratie.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-8 bg-black border border-zinc-800 rounded-2xl group transition-colors">
+                            <h3 class="text-xs font-bold uppercase tracking-widest mb-2 text-white">Vector Art</h3>
+                            <p class="text-[12px] text-zinc-500 italic">Haarscherpe kwaliteit voor elk type drukwerk.</p>
+                        </div>
+                        <div class="p-8 bg-black border border-zinc-800 rounded-2xl group transition-colors">
+                            <h3 class="text-xs font-bold uppercase tracking-widest mb-2 text-white">Full Brand</h3>
+                            <p class="text-[12px] text-zinc-500 italic">Een complete visuele identiteit voor de club.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 w-full grid grid-cols-2 gap-4">
+                    <div class="mockup-card mockup-card--dark group hover:border-orange-500/50 transition-all duration-500">
+                        <div class="mockup-inner">
+                            <div class="mockup-slideshow" data-slideshow="logos" aria-label="Logo mockups slideshow">
+                                <img class="slide is-active" src="assets/images/mockups/mockuplogo1.png" alt="Logo mockup 1" loading="lazy" decoding="async">
+                                <img class="slide" src="assets/images/mockups/mockuplogo2.png" alt="Logo mockup 2" loading="lazy" decoding="async">
+                                <img class="slide" src="assets/images/mockups/mockuplogo3.png" alt="Logo mockup 3" loading="lazy" decoding="async">
+                                <img class="slide" src="assets/images/mockups/mockuplogo4.png" alt="Logo mockup 4" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-card mockup-card--light shadow-2xl">
+                        <div class="mockup-inner">
+                            <img src="assets/images/mockups/mockupstudio1.png" alt="Design studio mockup" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✅ 2 scherpe observaties (geen uitlegmodus) -->
+            <div class="mt-14 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+                <p class="mb-2">De meeste clubshirts falen op leesbaarheid, niet op stijl.</p>
+                <p>Een logo dat mooi is op papier, kan waardeloos zijn op textiel.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Ontwerpen / Design Selectie -->
+    <section id="ontwerpen" class="py-28 bg-black border-b border-zinc-900">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-14 max-w-3xl">
+                <h2 class="text-4xl md:text-5xl font-black italic uppercase mb-4">Selectie ontwerpen</h2>
+
+                <!-- ✅ 1 leidende zin (takeaway) -->
+                <p class="text-zinc-300 text-base md:text-lg font-light mb-4">
+                    Elk ontwerp start vanuit identiteit, niet vanuit trends.
+                </p>
+
+                <p class="text-zinc-400 text-lg font-light">
+                    Een greep uit recente shirtontwerpen en concepten, met aandacht voor contrast, leesbaarheid en technische haalbaarheid.
+                </p>
+            </div>
+
+            <div class="design-blitz" aria-label="Ontwerpen slideshow">
+                <div class="design-track">
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup1.png" alt="Custom shirt ontwerp 1"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup2.png" alt="Custom shirt ontwerp 2"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup3.png" alt="Custom shirt ontwerp 3"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup4.png" alt="Custom shirt ontwerp 4"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup5.png" alt="Custom shirt ontwerp 5"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup6.png" alt="Custom shirt ontwerp 6"></div>
+                    <!-- duplicated for seamless loop -->
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup1.png" alt="Custom shirt ontwerp 1"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup2.png" alt="Custom shirt ontwerp 2"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup3.png" alt="Custom shirt ontwerp 3"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup4.png" alt="Custom shirt ontwerp 4"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup5.png" alt="Custom shirt ontwerp 5"></div>
+                    <div class="design-slide"><img src="assets/images/page style images/shirtmockup6.png" alt="Custom shirt ontwerp 6"></div>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-2xl text-sm text-zinc-500 mx-auto">
+                Elk ontwerp wordt op maat uitgewerkt. Kleuren, patronen en afwerking worden steeds afgestemd op clubidentiteit en productievereisten.
+            </div>
+        </div>
+    </section>
+
+    <!-- De Service -->
+    <section id="service" class="py-28 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-16 text-center md:text-left">
+                <h2 class="text-5xl font-black tracking-tighter mb-4 italic uppercase">De Service</h2>
+                <p class="text-zinc-500 uppercase text-xs tracking-[0.3em]">Één vaste prijs per shirt. Alles inbegrepen.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="group">
+                    <div class="text-7xl font-black text-zinc-900 italic mb-6 group-hover:text-orange-500 transition">01</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Creatieve audit</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed font-light">
+                        We analyseren logo’s, kleuren en bestaande shirts. Fouten, beperkingen en risico’s worden vooraf weggehaald.
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="text-7xl font-black text-zinc-900 italic mb-6 group-hover:text-orange-500 transition">02</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Design & controle</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed font-light">
+                        We ontwerpen of herwerken het shirt en bewaken plaatsing, contrast en technische haalbaarheid.
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="text-7xl font-black text-zinc-900 italic mb-6 group-hover:text-orange-500 transition">03</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Begeleide productie</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed font-light">
+                        Wij blijven uw aanspreekpunt tot levering. Productie gebeurt via geselecteerde Europese partners.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+                Elk project start zonder vast shirtmodel. Sport, intensiteit en gebruik bepalen pas daarna de technische keuzes.
+            </div>
+
+            <div class="mt-4 max-w-3xl text-sm text-zinc-600 leading-relaxed">
+                <strong class="text-zinc-400">NORMIC ontwerpt sportidentiteiten en begeleidt clubs tot het eindresultaat.</strong><br>
+                Van creatie en technische uitwerking tot gecontroleerde productie en levering.
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Formulier -->
+    <section id="project-aanvraag" class="py-28 bg-black border-t border-zinc-900">
+        <div class="max-w-2xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-black italic uppercase mb-4">Start uw project</h2>
+            <p class="text-zinc-500 text-[10px] uppercase tracking-[0.4em] mb-12">Uw visie, onze realisatie</p>
+            <form class="space-y-10 text-left">
+                <div class="grid sm:grid-cols-2 gap-10">
+                    <input type="text" placeholder="NAAM / CLUB" class="w-full contact-input uppercase text-[10px] tracking-widest">
+                    <input type="email" placeholder="EMAILADRES" class="w-full contact-input uppercase text-[10px] tracking-widest">
+                </div>
+                <textarea placeholder="UW VISIE" rows="4" class="w-full contact-input uppercase text-[10px] tracking-widest resize-none"></textarea>
+                <button type="submit" class="w-full py-6 bg-zinc-900 text-white font-bold uppercase text-[11px] tracking-[0.4em] hover:bg-orange-500 transition-all rounded-full">
+                    Verstuur Aanvraag
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Lightbox (click-to-zoom) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-lightbox-close></div>
+      <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Ontwerp bekijken">
+        <div class="lightbox__topbar">
+          <div class="lightbox__title" id="lightboxTitle">ONTWERP</div>
+          <button class="lightbox__close" type="button" aria-label="Sluiten" data-lightbox-close>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="lightbox__content">
+          <img class="lightbox__img" id="lightboxImg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-white text-black border-t border-zinc-100">
+        <div class="max-w-7xl mx-auto px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+                <!-- Brand -->
+                <div class="md:col-span-5">
+                    <div class="text-3xl font-black italic tracking-tight">NORMIC<span class="text-zinc-400 text-sm">.be</span></div>
+                    <p class="mt-4 text-sm text-zinc-600 leading-relaxed max-w-md">
+                        Ontwerpstudio voor sportidentiteit en teamwear, van creatie tot gecontroleerde levering.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 text-[11px] font-bold uppercase tracking-[0.25em] text-zinc-700 hover:border-orange-500/40 hover:bg-orange-500/10 transition">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 text-[11px] font-bold uppercase tracking-[0.25em] text-zinc-700 hover:border-orange-500/40 hover:bg-orange-500/10 transition">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-4">
+                    <div class="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400 mb-3">Contact</div>
+                    <div class="space-y-2 text-[13px] text-zinc-700 leading-snug">
+                        <div><strong>NORMIC Studio</strong></div>
+                        <div>Dammekensstraat 150, 9600 Ronse</div>
+                        <div><a class="hover:text-black" href="mailto:info@normic.be">info@normic.be</a></div>
+                        <div><a class="hover:text-black" href="tel:+32493673484">+32 493 67 34 84</a></div>
+                        <div>BE0733.924.863</div>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="md:col-span-3">
+                    <div class="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400 mb-3">Links</div>
+                    <ul class="space-y-2 text-[13px] text-zinc-700 leading-snug">
+                        <li><a href="#service" class="hover:text-black">De service</a></li>
+                        <li><a href="#ontwerpen" class="hover:text-black">Ontwerpen</a></li>
+                        <li><a href="#project-aanvraag" class="hover:text-black">Start project</a></li>
+                        <li><a href="privacybeleid.html" class="hover:text-black">Privacybeleid</a></li>
+                        <li><a href="#" class="hover:text-black" id="cookieSettingsLink">Cookievoorkeuren</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-10 pt-7 border-t border-zinc-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="text-[10px] text-zinc-400 font-bold tracking-widest uppercase">
+                    &copy; <span id="yearNow">2026</span> NORMIC STUDIO.
+                </div>
+                <a href="#top" class="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-500 hover:text-black transition">Naar boven</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie banner -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          Wij gebruiken enkel functionele en analytische cookies om deze website correct te laten werken en te verbeteren.
+          <a href="privacybeleid.html">Privacybeleid</a>
+        </div>
+        <div class="cookie-actions">
+          <button class="cookie-btn" data-cookie-decline>Weigeren</button>
+          <button class="cookie-btn cookie-btn--accept" data-cookie-accept>Accepteren</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const primaryNav = document.querySelector("#primary-navigation");
+        const icon = navToggle.querySelector('i');
+
+        const setNavState = (open) => {
+          primaryNav.setAttribute("data-visible", open ? "true" : "false");
+          navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          if (open) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+            document.body.style.overflow = 'hidden';
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+            document.body.style.overflow = '';
+          }
+        };
+
+        navToggle.addEventListener("click", () => {
+          const isVisible = primaryNav.getAttribute("data-visible") === "true";
+          setNavState(!isVisible);
+        });
+
+        // Close mobile nav when a link is clicked
+        primaryNav.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener('click', () => {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) setNavState(false);
+          });
+        });
+
+        // Safety: if user rotates to desktop, ensure no locked scroll
+        window.addEventListener('resize', () => {
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          if (!isMobile) setNavState(false);
+        });
+
+        // Mockup slideshow
+        (function initMockupSlideshows() {
+            const containers = document.querySelectorAll('[data-slideshow="logos"]');
+            if (!containers.length) return;
+
+            const startWhenVisible = (el) => {
+                const slides = Array.from(el.querySelectorAll('.slide'));
+                if (slides.length < 2) return;
+
+                let idx = 0;
+                let timer = null;
+
+                const show = (nextIdx) => {
+                    slides[idx].classList.remove('is-active');
+                    idx = nextIdx;
+                    slides[idx].classList.add('is-active');
+                };
+
+                const play = () => {
+                    if (timer) return;
+                    timer = window.setInterval(() => {
+                        const next = (idx + 1) % slides.length;
+                        show(next);
+                    }, 2400);
+                };
+
+                const stop = () => {
+                    if (!timer) return;
+                    window.clearInterval(timer);
+                    timer = null;
+                };
+
+                const card = el.closest('.mockup-card');
+                if (card) {
+                    card.addEventListener('mouseenter', stop);
+                    card.addEventListener('mouseleave', play);
+                }
+
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) play();
+                        else stop();
+                    });
+                }, { threshold: 0.25 });
+
+                io.observe(el);
+            };
+
+            containers.forEach(startWhenVisible);
+        })();
+
+        // CLICK-TO-ZOOM for ontwerpen
+        (function initDesignLightbox(){
+          const lb = document.getElementById('lightbox');
+          const lbImg = document.getElementById('lightboxImg');
+          const lbTitle = document.getElementById('lightboxTitle');
+          if (!lb || !lbImg) return;
+
+          const open = (src, alt) => {
+            lb.classList.add('is-open');
+            lb.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            lbImg.src = src;
+            lbImg.alt = alt || 'Ontwerp';
+            lbTitle.textContent = (alt || 'Ontwerp').toUpperCase();
+          };
+
+          const close = () => {
+            lb.classList.remove('is-open');
+            lb.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lbImg.removeAttribute('src');
+            lbImg.alt = '';
+          };
+
+          // attach click handlers to ontwerpen images
+          const designImgs = document.querySelectorAll('#ontwerpen .design-slide img');
+          designImgs.forEach((img) => {
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('role', 'button');
+            img.setAttribute('aria-label', 'Open ontwerp');
+
+            const handler = () => open(img.currentSrc || img.src, img.alt);
+            img.addEventListener('click', handler);
+            img.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handler();
+              }
+            });
+          });
+
+          // close actions
+          lb.querySelectorAll('[data-lightbox-close]').forEach((el) => el.addEventListener('click', close));
+          window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+          });
+        })();
+    </script>
+
+    <script>
+    /* HERO parallax */
+    (() => {
+      const hero = document.querySelector('.hero-parallax');
+      if (!hero) return;
+
+      const bg = hero.querySelector('.hero-parallax__bg');
+      if (!bg) return;
+
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      let ticking = false;
+      const MAX_SHIFT = 45;
+
+      const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+      const update = () => {
+        ticking = false;
+
+        const rect = hero.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+
+        const total = rect.height + vh;
+        const progress = clamp((vh - rect.top) / total, 0, 1);
+
+        const eased = progress * progress * (3 - 2 * progress);
+        const shift = eased * MAX_SHIFT;
+
+        bg.style.transform = `translate3d(0, -${shift}%, 0)`;
+      };
+
+      const requestTick = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      };
+
+      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('resize', requestTick);
+      update();
+    })();
+    </script>
+
+    

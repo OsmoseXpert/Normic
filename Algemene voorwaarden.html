@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NORMIC | Algemene voorwaarden</title>
+  <meta name="description" content="Algemene voorwaarden van NORMIC Studio voor design, branding en custom teamwear." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1a1a1a" />
+
+  <!-- Favicons (optioneel, zelfde structuur als je site) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+    :root{
+      --bg-matte:#1a1a1a;
+      --accent:#fb923c;
+      --blue:#0b364f;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#000;
+      color:#fff;
+      line-height:1.55;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    .glass-nav{
+      background:rgba(255,255,255,0.98);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .primary-navigation{
+        position:fixed;
+        inset:0 0 0 0;
+        background:white;
+        padding:6rem 2rem;
+        transform:translateX(100%);
+        transition:transform .4s cubic-bezier(0.4, 0, 0.2, 1);
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:2rem;
+      }
+      .primary-navigation[data-visible="true"]{ transform:translateX(0%); }
+    }
+
+    .pill{
+      background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .toc a{
+      display:block;
+      padding:.75rem 1rem;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:1rem;
+      color:rgba(255,255,255,0.85);
+      transition:all .2s ease;
+    }
+    .toc a:hover{
+      border-color: rgba(251,146,60,0.45);
+      color:#fff;
+      transform:translateY(-1px);
+    }
+
+    .card{
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(24,24,27,0.65);
+      border-radius: 1.25rem;
+    }
+
+    .prose-normic h2{
+      font-weight:900;
+      font-style:italic;
+      text-transform:uppercase;
+      letter-spacing:-0.02em;
+      margin-top:2.25rem;
+      margin-bottom:.75rem;
+      font-size:1.5rem;
+    }
+    .prose-normic h3{
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:0.85rem;
+      color:rgba(255,255,255,0.9);
+      margin-top:1.25rem;
+      margin-bottom:.5rem;
+    }
+    .prose-normic p, .prose-normic li{
+      color: rgba(244,244,245,0.78);
+    }
+    .prose-normic strong{ color:#fff; }
+    .prose-normic ul{
+      list-style: disc;
+      padding-left: 1.25rem;
+      margin-top: .5rem;
+    }
+    .prose-normic li{ margin:.35rem 0; }
+    .prose-normic a{ color: #fff; text-decoration: underline; text-decoration-color: rgba(251,146,60,0.55); }
+    .muted{
+      color: rgba(244,244,245,0.6);
+    }
+    .note{
+      border-left: 3px solid rgba(251,146,60,0.7);
+      background: rgba(0,0,0,0.35);
+      border-radius: 1rem;
+      padding: 1rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigatie (volgorde zoals je site-afspraak) -->
+  <nav class="fixed w-full z-50 glass-nav" aria-label="Hoofdnavigatie">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
+      <div class="text-2xl font-black tracking-tighter italic text-black">
+        NORMIC<span class="text-zinc-400 text-sm">.be</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="pt-28 pb-10 bg-[#1a1a1a] border-b border-zinc-900">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="inline-block pill px-6 py-2 rounded-full text-[11px] uppercase tracking-[0.4em] mb-6">
+        <span class="text-green-500">One Vision.</span>
+        <span class="text-orange-500 mx-2">One Identity.</span>
+        <span class="text-blue-400">One Standard.</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-black italic uppercase leading-tight">
+        Algemene voorwaarden
+      </h1>
+      <p class="mt-4 text-zinc-400 max-w-3xl font-light">
+        Duidelijke afspraken, zodat je project vlot loopt en niemand achteraf moet gokken wat “bedoeld” was.
+      </p>
+
+      
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="py-14 bg-black">
+    <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-10">
+      <!-- TOC -->
+      <aside class="lg:col-span-4">
+        <div class="card p-6 sticky top-28">
+          <h2 class="text-xs font-bold uppercase tracking-[0.35em] text-zinc-300">Inhoud</h2>
+          <div class="toc mt-4 grid gap-3 text-sm">
+            <a href="#1">1. Definities en toepasselijkheid</a>
+            <a href="#2">2. Offertes en totstandkoming</a>
+            <a href="#3">3. Uitvoering, planning en feedback</a>
+            <a href="#4">4. Correctierondes en goedkeuring</a>
+            <a href="#5">5. Productie via derden en kwaliteitsverwachting</a>
+            <a href="#6">6. Prijzen, voorschot en betaling</a>
+            <a href="#7">7. Annulatie en opschorting</a>
+            <a href="#8">8. Intellectuele eigendom en gebruiksrechten</a>
+            <a href="#9">9. Aangeleverd materiaal door de klant</a>
+            <a href="#10">10. Portfolio en referenties</a>
+            <a href="#11">11. Aansprakelijkheid</a>
+            <a href="#12">12. Overmacht</a>
+            <a href="#13">13. Klachten en herstel</a>
+            <a href="#14">14. Privacy</a>
+            <a href="#15">15. Consumenten, herroepingsrecht</a>
+            <a href="#16">16. Toepasselijk recht en bevoegde rechtbank</a>
+            <a href="#17">17. Contactgegevens</a>
+          </div>
+          
+        </div>
+      </aside>
+
+      <!-- PROSE -->
+      <section class="lg:col-span-8">
+        <div class="card p-7 md:p-10 prose-normic">
+          <p class="muted text-sm">
+            Laatst bijgewerkt: <strong>[DD/MM/JJJJ]</strong>
+          </p>
+
+          <h2 id="1">1. Definities en toepasselijkheid</h2>
+          <p>
+            In deze algemene voorwaarden betekent <strong>NORMIC</strong> de design studio die de opdracht uitvoert.
+            <strong>Klant</strong> is de persoon of organisatie die een opdracht plaatst.
+            <strong>Werk</strong> omvat onder meer logo-optimalisatie, branding, shirtontwerp, drukklare bestanden, en projectbegeleiding.
+          </p>
+          <p>
+            Deze voorwaarden zijn van toepassing op elke offerte, bestelling, overeenkomst en levering van diensten door NORMIC,
+            tenzij schriftelijk anders overeengekomen.
+          </p>
+
+          <h2 id="2">2. Offertes en totstandkoming</h2>
+          <p>
+            Offertes zijn geldig gedurende <strong>[30]</strong> dagen, tenzij anders vermeld. Een overeenkomst komt tot stand
+            zodra de klant schriftelijk bevestigt (e-mail volstaat) of zodra NORMIC start met de uitvoering na akkoord.
+          </p>
+          <p>
+            Bij tegenstrijdigheden geldt, in deze volgorde: (1) een ondertekende overeenkomst, (2) de offerte, (3) deze algemene voorwaarden.
+          </p>
+
+          <h2 id="3">3. Uitvoering, planning en feedback</h2>
+          <p>
+            NORMIC werkt projectmatig. De doorlooptijd hangt af van planning, complexiteit en de snelheid waarmee de klant feedback geeft.
+            Als feedback uitblijft, kan de timing opschuiven.
+          </p>
+          <p>
+            De klant duidt één contactpersoon aan die beslissingen bundelt. Dat voorkomt “twaalf meningen, nul keuzes”.
+          </p>
+
+          <h2 id="4">4. Correctierondes en goedkeuring</h2>
+          <p>
+            Tenzij anders vermeld in de offerte, zijn <strong>[2]</strong> correctierondes inbegrepen op basis van één gekozen concept.
+            Extra rondes of grote koerswijzigingen worden aangerekend aan <strong>[uurtarief of vaste meerprijs]</strong>.
+          </p>
+          <p>
+            De klant is verantwoordelijk om ontwerpen en drukproeven grondig na te kijken, inclusief spelling van namen,
+            nummers, maten, kleuren en logo-plaatsing. Na schriftelijke goedkeuring start productie of oplevering.
+          </p>
+
+          <h2 id="5">5. Productie via derden en kwaliteitsverwachting</h2>
+          <p>
+            Voor productie van teamwear kan NORMIC samenwerken met externe productiepartners.
+            NORMIC levert design en begeleiding, de producent levert het fysieke product.
+          </p>
+          <p>
+            Kleurweergave kan verschillen tussen scherm, print en textiel. Kleine afwijkingen in tint, positie of afwerking zijn inherent aan productie.
+            NORMIC streeft naar topkwaliteit, maar kan geen absolute identieke reproductie garanderen over alle materialen en batches.
+          </p>
+
+          <h2 id="6">6. Prijzen, voorschot en betaling</h2>
+          <p>
+            Prijzen zijn exclusief btw tenzij uitdrukkelijk anders vermeld. NORMIC kan een voorschot vragen van <strong>[bijv. 30%]</strong>
+            voor de start van het werk. Facturen zijn betaalbaar binnen <strong>[14]</strong> dagen.
+          </p>
+          <p>
+            Bij laattijdige betaling kan NORMIC het werk tijdelijk pauzeren tot ontvangst van betaling.
+            Eventuele heropstartkosten of planning-impact kunnen worden doorgerekend.
+          </p>
+
+          <h2 id="7">7. Annulatie en opschorting</h2>
+          <p>
+            Annulatie na start betekent dat reeds gepresteerde uren en gemaakte kosten (ook bij derden) aangerekend worden.
+            Bij maatwerk en gepersonaliseerde teamwear is annulatie vaak beperkt zodra productie is ingepland of gestart.
+          </p>
+          <p>
+            Als de klant herhaaldelijk niet reageert of noodzakelijke input niet aanlevert, mag NORMIC de opdracht opschorten
+            en een realistische herplanning voorstellen.
+          </p>
+
+          <h2 id="8">8. Intellectuele eigendom en gebruiksrechten</h2>
+          <p>
+            Alle intellectuele eigendomsrechten op schetsen, concepten, ontwerpen en bronbestanden blijven bij NORMIC,
+            tenzij schriftelijk anders overeengekomen.
+          </p>
+          <p>
+            Na <strong>volledige betaling</strong> krijgt de klant een <strong>niet-exclusief</strong> gebruiksrecht op het definitieve ontwerp
+            voor eigen clubgebruik, zoals teamwear, social media, website en drukwerk.
+            Herverkoop, sublicentie, of doorverkoop van het ontwerp als template is niet toegestaan zonder schriftelijke toestemming.
+          </p>
+          <p>
+            Overdracht van exclusieve rechten of bronbestanden kan, maar enkel mits expliciete schriftelijke overeenkomst en eventuele meerprijs.
+          </p>
+
+          <h2 id="9">9. Aangeleverd materiaal door de klant</h2>
+          <p>
+            De klant garandeert dat aangeleverde logo’s, foto’s, teksten en merknamen geen rechten van derden schenden.
+            Als er toch een claim komt door aangeleverd materiaal, vrijwaart de klant NORMIC voor de daaruit voortvloeiende schade en kosten.
+          </p>
+
+          <h2 id="10">10. Portfolio en referenties</h2>
+          <p>
+            NORMIC mag gerealiseerde projecten tonen als referentie (portfolio, website, social media), tenzij de klant vóór de start schriftelijk
+            vraagt om dit niet te doen. Lopende of gevoelige releases respecteren we, timing kan dus altijd in overleg.
+          </p>
+
+          <h2 id="11">11. Aansprakelijkheid</h2>
+          <p>
+            NORMIC is niet aansprakelijk voor indirecte schade zoals omzetverlies, gemiste kansen of gevolgschade.
+            Als NORMIC toch aansprakelijk blijkt, is die aansprakelijkheid beperkt tot het bedrag van de opdracht (exclusief btw),
+            of het deel waarop de schade betrekking heeft, afhankelijk van wat redelijk is.
+          </p>
+          <p>
+            Voor fouten die ontstaan na goedkeuring van drukproef of finale bestanden (zoals een tikfout in een naam) kan NORMIC niet instaan.
+          </p>
+
+          <h2 id="12">12. Overmacht</h2>
+          <p>
+            Bij overmacht (bijvoorbeeld leveringsproblemen bij derden, ziekte, stakingen, overheidsmaatregelen, storingen) mag NORMIC de uitvoering
+            opschorten of de planning aanpassen zonder schadevergoeding.
+          </p>
+
+          <h2 id="13">13. Klachten en herstel</h2>
+          <p>
+            Klachten worden zo snel mogelijk gemeld en uiterlijk binnen <strong>[14]</strong> dagen na levering of ontdekking.
+            NORMIC krijgt de kans om een redelijke oplossing te bieden, zoals correctie of herlevering waar dat haalbaar is.
+          </p>
+
+          <h2 id="14">14. Privacy</h2>
+          <p>
+            NORMIC verwerkt persoonsgegevens enkel voor communicatie, offerte, facturatie en projectuitvoering.
+            Meer info staat in het privacybeleid op de website, of is op aanvraag beschikbaar.
+          </p>
+
+          <h2 id="15">15. Consumenten, herroepingsrecht</h2>
+          <p>
+            Voor consumenten geldt in principe een herroepingstermijn van 14 dagen bij overeenkomsten op afstand,
+            maar er bestaan wettelijke uitzonderingen, onder meer bij maatwerk, gepersonaliseerde goederen en diensten
+            die gestart zijn met uitdrukkelijk akkoord van de consument.
+          </p>
+          <p class="muted text-sm">
+            Opmerking: NORMIC werkt voornamelijk B2B (clubs, organisaties). Als je als consument bestelt, kan NORMIC vragen om expliciet akkoord
+            te geven dat het werk start vóór het einde van de herroepingstermijn wanneer het om maatwerk gaat.
+          </p>
+
+          <h2 id="16">16. Toepasselijk recht en bevoegde rechtbank</h2>
+          <p>
+            Op alle overeenkomsten is het <strong>Belgisch recht</strong> van toepassing.
+            In geval van geschil streven partijen eerst naar een oplossing in overleg.
+            Indien nodig zijn de rechtbanken van <strong>[arrondissement invullen]</strong> bevoegd, tenzij dwingend recht anders bepaalt.
+          </p>
+
+          <h2 id="17">17. Contactgegevens</h2>
+          <p>
+            <strong>NORMIC Studio</strong><br>
+            Adres: <strong>Dammekensstraat 150, 9600 Ronse</strong><br>
+            Ondernemingsnummer / btw: <strong>BE0733.924.863</strong><br>
+            E-mail: <strong>info@normic.be</strong><br>
+            Telefoon: <strong>+32 493 67 34 84</strong>
+          </p>
+
+          
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-14 bg-white text-black text-center border-t border-zinc-100">
+    <div class="text-3xl font-black italic mb-4">NORMIC<span class="text-zinc-400 text-sm">.be</span></div>
+    <div class="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">
+      &copy; <span id="y"></span> NORMIC STUDIO. Alle rechten voorbehouden.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.querySelector(".nav-toggle");
+    const primaryNav = document.querySelector("#primary-navigation");
+
+    navToggle?.addEventListener("click", () => {
+      const isVisible = primaryNav.getAttribute("data-visible") === "true";
+      primaryNav.setAttribute("data-visible", isVisible ? "false" : "true");
+      navToggle.setAttribute("aria-expanded", isVisible ? "false" : "true");
+    });
+
+    // Year
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
