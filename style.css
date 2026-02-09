@@ -801,4 +801,28 @@ display: inline-flex;
 h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
 }
+/* Moup cards: wit i.p.v. donker */
+.l.mckup-card--light {
+
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+
+/* Shirts in slider: wit canvas */
+.design-slide {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Geen donkere filters meer op shirts */
+.design-slide img {
+  filter: none !important;
+}
+
+/* Lightbox titel wit */
+.lightbox__title {
+  color: #ffffff !important;
+}
+
 
