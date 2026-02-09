@@ -877,33 +877,64 @@
 
             containers.forEach(startWhenVisible);
         })();
+// CLICK-TO-ZOOM for ontwerpen (toggle close)
+(function initDesignLightbox(){
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbTitle = document.getElementById('lightboxTitle');
+  if (!lb || !lbImg) return;
 
-        // CLICK-TO-ZOOM for ontwerpen
-        (function initDesignLightbox(){
-          const lb = document.getElementById('lightbox');
-          const lbImg = document.getElementById('lightboxImg');
-          const lbTitle = document.getElementById('lightboxTitle');
-          if (!lb || !lbImg) return;
+  const isOpen = () => lb.classList.contains('is-open');
 
-          const open = (src, alt) => {
-            lb.classList.add('is-open');
-            lb.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            lbImg.src = src;
-            lbImg.alt = alt || 'Ontwerp';
-            lbTitle.textContent = (alt || 'Ontwerp').toUpperCase();
-          };
+  const open = (src, alt) => {
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    lbImg.src = src;
+    lbImg.alt = alt || 'Ontwerp';
+    if (lbTitle) lbTitle.textContent = (alt || 'Ontwerp').toUpperCase();
+  };
 
-          const close = () => {
-            lb.classList.remove('is-open');
-            lb.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            lbImg.removeAttribute('src');
-            lbImg.alt = '';
-          };
+  const close = () => {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.removeAttribute('src');
+    lbImg.alt = '';
+  };
 
-          // attach click handlers to ontwerpen images
-          const designImgs = document.querySelectorAll('#ontwerpen .design-slide img');
-          designImgs.forEach((img) => {
-            img.setAttribute('tabindex', '0');
-            img.setAttribute('ro
+  // Sluiten: klik op backdrop/kruisje (data-lightbox-close) OF op de afbeelding zelf
+  lb.addEventListener('click', (e) => {
+    const clickedClose = e.target.closest('[data-lightbox-close]');
+    const clickedImage = e.target === lbImg;
+    if (clickedClose || clickedImage) close();
+  });
+
+  // Escape sluit ook
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) close();
+  });
+
+  // Thumbnails: klik opent, klik opnieuw op dezelfde = sluiten (toggle)
+  const designImgs = document.querySelectorAll('#ontwerpen .design-slide img');
+  designImgs.forEach((img) => {
+    img.style.cursor = 'zoom-in';
+
+    const toggleFromThumb = () => {
+      const src = img.getAttribute('src');
+      const alt = img.getAttribute('alt') || 'Ontwerp';
+
+      if (isOpen() && lbImg.getAttribute('src') === src) close();
+      else open(src, alt);
+    };
+
+    img.addEventListener('click', toggleFromThumb);
+
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleFromThumb();
+      }
+    });
+  });
+})();
