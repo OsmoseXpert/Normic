@@ -797,3 +797,8 @@ display: inline-flex;
   50%  { --rg-x: 85%; --rg-y: 50%; }
   100% { --rg-x: 40%; --rg-y: 85%; }
 }
+/* TITLES: forceer zuiver wit */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
